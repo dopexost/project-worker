@@ -1,0 +1,6 @@
+RewriteEngine on
+
+
+RewriteRule ^page([0-9_]+)/? index.php?page=$1 [L]
+RewriteCond %{QUERY_STRING} ^\index.php?page=(.+)$
+RewriteRule (.*) feed/page%1.html [L]

@@ -1,0 +1,18 @@
+AddDefaultCharset UTF-8 
+
+RewriteEngine on
+
+
+RewriteRule ^statya([0-9_]+)/? ?action=viewArticle&articleId=$1 [L]
+RewriteCond %{QUERY_STRING} ^\?action=viewArticle\&articleId=(.+)$
+RewriteRule (.*) kb/statya%1.html [L]
+
+#RewriteRule ^statya([0-9_]+)/? ?action=viewArticle&articleId=$1 [QSA,L]
+#RewriteCond %{QUERY_STRING} ^kb\/\?action=viewArticle\&articleId=(.+)$
+#RewriteRule (.*) statiya%1.html [QSA,L]
+
+
+
+
+
+Redirect 301 /?action=viewArticle&articleId=1 /statya1
